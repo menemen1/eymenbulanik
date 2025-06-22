@@ -82,3 +82,4 @@ footer {
   background: var(--primary);
   color: var(--white);
 }
+body { border: 5px solid red; }
