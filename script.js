@@ -159,6 +159,9 @@ function setupHeaderEffects() {
 
 // Enhanced Code Section with Better UX
 function setupCodeSection() {
+    // Load actual file contents into code sections
+    loadActualCodeContent();
+    
     // Ensure code tabs work properly
     window.showCode = function(type) {
         // Hide all code contents
@@ -182,6 +185,49 @@ function setupCodeSection() {
             targetTab.classList.add('active');
         }
     };
+
+    async function loadActualCodeContent() {
+        try {
+            // Load HTML content
+            const htmlResponse = await fetch('index.html');
+            if (htmlResponse.ok) {
+                const htmlContent = await htmlResponse.text();
+                document.getElementById('html-code').textContent = htmlContent;
+            }
+            
+            // Load CSS content
+            const cssResponse = await fetch('style.css');
+            if (cssResponse.ok) {
+                const cssContent = await cssResponse.text();
+                document.getElementById('css-code').textContent = cssContent;
+            }
+            
+            // Load JavaScript content
+            const jsResponse = await fetch('script.js');
+            if (jsResponse.ok) {
+                const jsContent = await jsResponse.text();
+                document.getElementById('js-code').textContent = jsContent;
+            }
+            
+        } catch (error) {
+            console.log('Could not load some code files, showing fallback content');
+            // If fetching fails, show current page source
+            loadCodeFromCurrentPage();
+        }
+    }
+
+    function loadCodeFromCurrentPage() {
+        // Get current page HTML - complete and exact
+        const htmlContent = document.documentElement.outerHTML;
+        document.getElementById('html-code').textContent = htmlContent;
+        
+        // Show message for CSS and JS that they should be fetched from files
+        document.getElementById('css-code').textContent = '/* Unable to fetch CSS file directly. The complete CSS code is in style.css */';
+        document.getElementById('js-code').textContent = '// Unable to fetch JS file directly. The complete JavaScript code is in script.js';
+    }
+    
+    // Load the actual file contents first
+    loadActualCodeContent();
 
     // Enhanced copy functionality with modern clipboard API
     window.copyCode = function(elementId) {
@@ -380,11 +426,14 @@ function updateLayoutCalculations() {
     });
 }
 
-// Enhanced Card Interactions
+// Enhanced Card Interactions with Modal Support
 document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.card');
     
-    cards.forEach(card => {
+    cards.forEach((card, index) => {
+        // Add unique identifier to cards
+        card.setAttribute('data-card-id', index);
+        
         // Mouse move effect for subtle tilt
         card.addEventListener('mousemove', function(e) {
             if (window.innerWidth > 768) {
@@ -406,14 +455,311 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.transform = '';
         });
         
-        // Click effect
-        card.addEventListener('click', function() {
+        // Click effect with modal opening
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
             card.style.transform = 'scale(0.98)';
             setTimeout(() => {
                 card.style.transform = '';
+                openProjectModal(card);
             }, 150);
         });
     });
+});
+
+// Project Modal System - Display Only
+let currentProject = null;
+
+// Sample project data for demonstration
+const projectShowcaseData = {
+    // T-MBA Team Leadership
+    "0": {
+        title: "T-MBA Team Leadership & Community Service",
+        subtitle: "Leadership Project • 2023-2025",
+        description: "Leading school project team 'T-MBA' organizing multiple fundraising concerts and events. Successfully organized 2 concerts after earthquake to help college students, events for National Children's Day, Youth and Sports Day, and spring festival concert donating all proceeds to earthquake zone students in need.",
+        skills: ["Team Leadership", "Event Organization", "Community Service", "Fundraising", "Concert Production", "Project Management"],
+        achievements: [
+            {
+                title: "Earthquake Relief Fundraising",
+                description: "Organized 2 major concerts raising significant funds for earthquake victims and college students in need"
+            },
+            {
+                title: "Community Event Leadership",
+                description: "Successfully led organization of National Children's Day and Youth and Sports Day celebrations"
+            }
+        ],
+        images: [
+            {
+                url: "tmba/tmba2.jpg",
+                caption: "My Team in 2023-2024 school year"
+            },
+            {
+               url: "tmba/tmba1.jpg",
+                caption: "My Team in 2023-2024 school year"
+            },
+            {
+                url: "tmba/tmbaph4.HEIC",
+                caption: "On the duty at National Childern's Day"
+            },
+            {
+                url: "tmba/tmba3.jpg",
+                caption: "My Team in 2024-2025 school year"
+            },
+            {
+                url: "tmba/tmbaph3.HEIC",
+                caption: "Behind the stages with my friend and my teacher"
+            }
+        ],
+        videos: [
+
+            {
+                url: "tmba/concert1.mp4",
+                caption: "Our third concert in 2025"
+            },
+{
+                url: "tmba/concert2.mp4",
+                caption: "Our first concert in 2023"
+            },
+        ]
+    },
+    // Fibonacci Robotics
+    "1": {
+        title: "Fibonacci International Robotics Championship",
+        subtitle: "Robotics Competition • 2024",
+        description: "Led robotics team to 2nd place in Fibonacci International Finals in entrepreneurship category. As team leader, coordinated strategy, design, and implementation while managing team dynamics and competition preparation for this prestigious international competition.",
+        skills: ["Robotics Programming", "Team Leadership", "International Competition", "Entrepreneurship", "Strategic Planning", "Technical Innovation"],
+        achievements: [
+            {
+                title: "Silver Medal - International Finals",
+                description: "Achieved 2nd place in Fibonacci International Finals in entrepreneurship category"
+            },
+            {
+                title: "Team Leadership Excellence",
+                description: "Successfully led diverse team through complex competition challenges and strategic planning"
+            }
+        ],
+        images: [
+
+            {
+                url: "robo/fiboben.HEIC",
+                caption: "Me with the second place certificate:)"
+            },
+            {
+               url: "robo/fiboodul.jpg",
+                caption: "My Team getting the second place award"
+            },
+            {
+                url: "robo/fiboodul2.HEIC",
+                caption: "My Team's second place certificate"
+            }
+
+        ],
+        videos: [
+
+{
+                url: "robo/fibosunum.mp4",
+                caption: "Me and my team doing presentation to the judges"
+            }
+
+        ]
+    },
+    "2": {
+  title: "Robotex Turkey Finals",
+  subtitle: "Robotics Championship • 2024",
+  description: "Team captain responsible for both design and software in the Robotex Turkey Finals. Coordinated team workflow and delivered a successful prototype that met competition requirements.",
+  skills: ["Mechanical Design", "Embedded Systems", "Team Management", "Competition Strategy", "Software Integration"],
+  achievements: [
+    {
+      title: "Qualified for International Finals",
+      description: "Successfully led the team through national finals, securing a place in international competitions."
+    },
+    {
+      title: "Team Captain",
+      description: "Managed both technical development and team coordination under high-pressure competition timelines."
+    }
+  ],
+  images: [
+
+            {
+                url: "robo/robo2.jpg",
+                caption: "Me and my team ready for presentation to the judges"
+            },
+            {
+               url: "robo/roboodul.jpg",
+                caption: "My team getting the second place award in Robotex Turkey Regionals"
+            },
+            {
+                url: "robo/robo1.jpg",
+                caption: "Me with the second place trophy:)"
+            }
+
+
+
+  ],
+  videos: [
+
+
+
+{
+                url: "robo/robosunum.mp4",
+                caption: "Me and my team doing presentation to the judges"
+            },
+
+{
+                url: "robo/robosunum2.mp4",
+                caption: "Me and my team doing presentation to the judges"
+            }
+
+
+
+    
+  ]
+}
+
+    
+};
+
+function openProjectModal(card) {
+    const modal = document.getElementById('projectModal');
+    const title = card.querySelector('h3').textContent;
+    const description = card.querySelector('p').textContent;
+    const cardId = card.getAttribute('data-card-id');
+    
+    currentProject = cardId;
+    
+    // Get project data or create default
+    const projectData = projectShowcaseData[cardId] || {
+        title: title,
+        subtitle: "Project • Timeline",
+        description: description,
+        skills: ["Technology", "Innovation", "Problem Solving"],
+        achievements: [
+            {
+                title: "Project Achievement",
+                description: "Key outcomes and recognition will be displayed here as project content is added."
+            }
+        ],
+        images: [],
+        videos: []
+    };
+    
+    // Populate modal with project showcase data
+    populateProjectDisplay(projectData);
+    
+    // Show modal with animation
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Set focus for accessibility
+    modal.querySelector('.modal-close').focus();
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    currentProject = null;
+}
+
+function populateProjectDisplay(data) {
+    // Set main title and subtitle
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('projectMainTitle').textContent = data.title;
+    document.getElementById('projectSubtitle').textContent = data.subtitle;
+    
+    // Set description
+    document.getElementById('projectDescription').innerHTML = `<p>${data.description}</p>`;
+    
+    // Populate skills
+    const skillsContainer = document.getElementById('projectSkills');
+    skillsContainer.innerHTML = '';
+    data.skills.forEach(skill => {
+        const skillTag = document.createElement('div');
+        skillTag.className = 'skill-tag';
+        skillTag.textContent = skill;
+        skillsContainer.appendChild(skillTag);
+    });
+    
+    // Populate achievements
+    const achievementsContainer = document.getElementById('projectAchievements');
+    achievementsContainer.innerHTML = '';
+    data.achievements.forEach(achievement => {
+        const achievementCard = document.createElement('div');
+        achievementCard.className = 'achievement-card';
+        achievementCard.innerHTML = `
+            <h4>${achievement.title}</h4>
+            <p>${achievement.description}</p>
+        `;
+        achievementsContainer.appendChild(achievementCard);
+    });
+    
+    // Populate images
+    const imagesContainer = document.getElementById('projectImages');
+    if (data.images && data.images.length > 0) {
+        imagesContainer.innerHTML = '';
+        data.images.forEach((image, index) => {
+            const imageDiv = document.createElement('div');
+            imageDiv.className = 'project-image';
+            imageDiv.innerHTML = `
+                <img src="${image.url}" alt="${image.caption || 'Project Image ' + (index + 1)}">
+                <div class="project-image-caption">${image.caption || 'Project Image ' + (index + 1)}</div>
+            `;
+            imagesContainer.appendChild(imageDiv);
+        });
+    } else {
+        imagesContainer.innerHTML = `
+            <div class="gallery-placeholder">
+                <span>📸</span>
+                <p>Project images will be displayed here</p>
+            </div>
+        `;
+    }
+    
+    // Populate videos
+    const videosContainer = document.getElementById('projectVideos');
+    if (data.videos && data.videos.length > 0) {
+        videosContainer.innerHTML = '';
+        data.videos.forEach((video, index) => {
+            const videoDiv = document.createElement('div');
+            videoDiv.className = 'project-video';
+            videoDiv.innerHTML = `
+                <video src="${video.url}" controls>
+                    Your browser does not support the video tag.
+                </video>
+                <div class="project-video-caption">${video.caption || 'Project Video ' + (index + 1)}</div>
+            `;
+            videosContainer.appendChild(videoDiv);
+        });
+    } else {
+        videosContainer.innerHTML = `
+            <div class="video-placeholder">
+                <span>🎥</span>
+                <p>Project videos and demos will be displayed here</p>
+            </div>
+        `;
+    }
+}
+
+// Close modal with escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('projectModal');
+        if (modal.classList.contains('active')) {
+            closeProjectModal();
+        }
+    }
+});
+
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('projectModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectModal();
+            }
+        });
+    }
 });
 
 // Initialize when DOM is ready
