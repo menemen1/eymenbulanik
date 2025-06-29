@@ -614,7 +614,161 @@ const projectShowcaseData = {
 
     
   ]
+},
+
+
+"3": {
+  title: "FRC Robotics Team Involvement",
+  subtitle: "FIRST Robotics Competition • 2024",
+  description: "Actively contributed to an international FRC robotics team as a software developer and strategic support member. Collaborated with international teammates to solve complex challenges, write optimized code, and participate in advanced autonomous and manual control systems.",
+  skills: [
+    "Autonomous Programming",
+    "Real-Time Strategy",
+    "Cross-Team Collaboration",
+    "Software Optimization",
+    "Sensor Integration"
+  ],
+  achievements: [
+    {
+      title: "International Robotics Collaboration",
+      description: "Worked with a global team in the FIRST Robotics Competition to design and program competition-ready robots."
+    },
+    {
+      title: "Software and Strategy Contributor",
+      description: "Developed critical robot functions including autonomous routines and assisted in real-time decision-making during matches."
+    }
+  ],
+  images: [
+{
+    url: "frc/atthekoy.jpg",
+                caption: "Us at the village school"
+},
+{
+    url: "frc/explain2.jpg",
+                caption: "Me doing presentation to other competitors in stand"
+},
+{
+    url: "frc/frcmaskot.jpg",
+                caption: "Me with the other team's mascot:)"
+},
+{
+    url: "frc/frcteam.jpg",
+                caption: "Our FRC team"
+},
+{
+    url: "frc/koyokulutakim.jpg",
+                caption: "Our team at the village school"
+},
+{
+    url: "frc/ourobot.jpg",
+                caption: "Our FRC robot"
+},
+{
+    url: "frc/ourstand.jpg",
+                caption: "Me and my teammates at the stand:)"
+},
+{
+    url: "frc/playinggames2.jpg",
+                caption: "At the stand having fun with other teams:)"
+},
+{
+    url: "frc/qualificationmatch.jpg",
+                caption: "Our qualification match result"
+},
+{
+    url: "frc/talkingother.jpg",
+                caption: "Me explaining the game to other teams"
+},
+
+
+  ],
+  videos: [{
+    url: "frc/atthematch.MOV",
+                caption: "Our team supporting our teammates at the match"
+},
+{
+    url: "frc/birdilekhakki.mp4",
+                caption: "Our make a wish project"
+},
+{
+    url: "frc/koyokulu.mp4",
+                caption: "Me explaining the application to a student"
+},
+{
+    url: "frc/koyokulusunum.mp4",
+                caption: "Me explaining FRC to the students at village school."
+},
+{
+    url: "frc/koyokulusunum2.mp4",
+                caption: "Me explaining the application to the students at village school."
+}]
+},
+"4": {
+  title: "Model United Nations (MUN)",
+  subtitle: "Outstanding Delegate & Co-Chair • 2024–2025",
+  description: "Participated in multiple MUN conferences as both an award-winning delegate and a committee co-chair. Demonstrated advanced diplomacy, negotiation, public speaking, and leadership skills while guiding debates and preparing official documents.",
+  skills: [
+    "Public Speaking",
+    "Policy Research",
+    "Formal Writing",
+    "Leadership",
+    "Conflict Resolution",
+    "Moderating Debates"
+  ],
+  achievements: [
+    {
+      title: "Outstanding Delegate Award",
+      description: "Received the Outstanding Delegate award at DoğaMUN 2024 for effective resolution drafting and leadership during committee sessions."
+    },
+    {
+      title: "UNWOMEN Committee Co-Chair",
+      description: "Served as co-chair for the UNWOMEN committee, preparing study guides, moderating debates, and ensuring procedural integrity."
+    }
+  ],
+  images: [
+    {
+    url: "mun/meoutstand.jpg",
+                caption: "Me getting 'Outstanding Delegate' award"
+},
+{
+    url: "mun/measco.jpg",
+                caption: "Me as co-chair in the session"
+},
+{
+    url: "mun/ascochair.jpg",
+                caption: "My POV of being a co-chair"
+},
+{
+    url: "mun/narin.HEIC",
+                caption: "Me with the other co-chair:)"
 }
+
+
+
+
+  ],
+  videos: [
+
+    {
+    url: "mun/gsl.mp4",
+                caption: "My opening speech as a delegate"
+},
+{
+    url: "mun/meinthebreak.mp4",
+                caption: "My POV in the break as a delegate"
+},
+{
+    url: "mun/getout.MOV",
+                caption: "Me getting the Outstanding award"
+}
+
+
+
+
+  ]
+}
+
+
 
     
 };
