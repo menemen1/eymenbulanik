@@ -1272,3 +1272,21 @@ footer p {
         min-width: auto;
     }
 }
+
+
+.static-card { 
+  cursor: default !important; 
+}
+
+.static-card:hover {
+  transform: none !important;
+  box-shadow: 0 8px 32px var(--shadow-light) !important;
+  border-color: var(--border-light) !important;
+}
+
+
+.static-card::after { 
+  display: none !important; 
+}
+
+

@@ -432,10 +432,10 @@ function updateLayoutCalculations() {
 
 // Enhanced Card Interactions with Modal Support
 document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.card');
+    // sadece static-card olmayanlar
+    const cards = document.querySelectorAll('.card:not(.static-card)');
     
     cards.forEach((card, index) => {
-        // Add unique identifier to cards
         card.setAttribute('data-card-id', index);
         
         // Mouse move effect for subtle tilt
@@ -470,6 +470,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
 
 // Project Modal System - Display Only
 let currentProject = null;
@@ -770,7 +771,47 @@ const projectShowcaseData = {
 
 
   ]
+},
+
+
+// Academic Excellence Awards (cardId: 6)
+"6": {
+  title: "Academic Excellence Awards",
+  subtitle: "Awards • 2027–2025",
+  description: "High Honor / Honor rolls, school-wide academic awards, and standardized test achievements.",
+  
+  // İstersen skills/achievements de girersin; şart değil
+  skills: ["Academic Excellence", "Consistency", "Discipline", "High Honor"],
+  achievements: [
+    { title: "High Honor Roll", description: "Multiple semesters with outstanding GPA." },
+    
+  ],
+
+  // ⬇⬇⬇ Videolar (0–4 mantığının aynısı; dizi halinde)
+  images: [
+    {
+      url: "academics/honor_roll_2024.mp4",
+      caption: "High Honor Roll Ceremony 2024"
+    },
+    {
+      url: "academics/awards_day_math.mp4",
+      caption: "Math Department Award"
+    },
+    {
+      url: "academics/ielts_result_screen.mp4",
+      caption: "IELTS Result Showcase"
+    },
+    {
+      url: "academics/sat_result_walkthrough.mp4",
+      caption: "SAT Score Breakdown"
+    },
+    {
+      url: "academics/school_awards_2025.mp4",
+      caption: "School Awards Day 2025"
+    }
+  ]
 }
+
 
 
 
@@ -941,157 +982,3 @@ function setupDownloadButton() {
     }
 }
 
-function downloadYouwareFile() {
-    // YOUWARE.md file content
-    const youwareContent = `# Eymen BULANIK - Portfolio Website
-
-## Project Overview
-A modern, responsive portfolio website showcasing academic achievements, research projects, and technical skills in science, technology, and robotics. The site features a sophisticated black and white design with modern animations and interactions.
-
-## Architecture & Structure
-
-### Core Design Philosophy
-- **Modern Minimalism**: Clean, professional design with strategic use of black, white, and gray tones
-- **Content-First**: Emphasizes showcasing impressive technical achievements and research work
-- **Performance-Optimized**: Smooth animations, optimized loading, and responsive design
-- **Accessibility-Focused**: Keyboard navigation, semantic HTML, and proper contrast ratios
-
-### File Structure
-\`\`\`
-src/
-├── index.html          # Main HTML structure with semantic sections
-├── style.css          # Enhanced CSS with modern design system and animations
-├── script.js          # Advanced JavaScript with smooth interactions
-├── assets/            # Directory for images and media files
-└── YOUWARE.md         # This documentation file
-\`\`\`
-
-### Key Sections
-1. **Hero Section**: Animated introduction with gradient background and parallax effects
-2. **About Section**: Personal introduction with animated profile placeholder and detailed background
-3. **Education Section**: Academic achievements and current studies
-4. **Projects Section**: Detailed project cards showcasing quantum research, robotics competitions, and community work
-5. **Awards Section**: Recognition and achievements in academics and competitions
-6. **Skills Section**: Technical competencies organized by category
-7. **Code Section**: Interactive code viewer with tab switching and copy functionality
-8. **Contact Section**: Professional contact information and collaboration interests
-
-## Technical Implementation
-
-### CSS Design System
-- **CSS Custom Properties**: Consistent color palette and spacing using CSS variables
-- **Modern Layout**: CSS Grid and Flexbox for responsive layouts
-- **Advanced Animations**: CSS keyframes, transforms, and transitions for smooth UX
-- **Performance**: Hardware-accelerated animations using transform and opacity
-- **Responsive Design**: Mobile-first approach with strategic breakpoints
-
-### JavaScript Features
-- **Smooth Scrolling**: Enhanced navigation with offset calculations for fixed header
-- **Intersection Observer**: Performance-optimized scroll animations with staggered effects
-- **Parallax Effects**: Subtle depth with multiple layer movement
-- **Interactive Elements**: Advanced hover effects, click animations, and keyboard navigation
-- **Code Functionality**: Tab switching and modern clipboard API integration
-- **Performance Optimizations**: Throttled scroll events and lazy loading capabilities
-
-### Key Interactive Features
-- **Scroll Progress Indicator**: Visual feedback for page navigation
-- **Dynamic Header**: Background changes and blur effects on scroll
-- **Card Hover Effects**: 3D transforms and shadow animations
-- **Keyboard Navigation**: Alt+number shortcuts for quick section jumping
-- **Copy Code Functionality**: Modern clipboard API with fallback support
-- **Staggered Animations**: Sequential element animations for visual appeal
-
-## Development Guidelines
-
-### Content Management
-- All content is hardcoded in HTML for optimal performance and SEO
-- Project information should be updated in the Projects section card containers
-- Skills and awards can be modified by editing the respective card containers
-- Contact information is located in the Contact section cards
-
-### Styling Conventions
-- Use CSS custom properties for consistent theming
-- Follow BEM methodology for class naming where applicable
-- Maintain the established color palette (black, white, grays)
-- Ensure all animations use transform and opacity for performance
-- Test responsiveness across mobile, tablet, and desktop viewports
-
-### Performance Considerations
-- Images should be optimized and compressed before adding
-- Use modern image formats (WebP) when possible with fallbacks
-- Minimize DOM manipulation in JavaScript
-- Use requestAnimationFrame for scroll-based animations
-- Implement lazy loading for any additional media content
-
-### Future Enhancement Opportunities
-- Add a dark/light theme toggle while maintaining the sophisticated aesthetic
-- Implement a blog section for technical articles and research updates
-- Add more interactive elements like animated charts for skills visualization
-- Consider adding a projects filtering system by technology or category
-- Implement PWA features for offline access to portfolio content
-
-## Content Focus Areas
-The portfolio emphasizes:
-- **Quantum Computing Research**: TeleQubit project and Qiskit expertise
-- **Robotics Leadership**: International competition achievements and team leadership
-- **Academic Excellence**: Merit scholarship and consistent high performance
-- **Community Impact**: Make-A-Wish involvement and educational outreach
-- **Technical Skills**: Programming, research, and engineering capabilities
-
-## Browser Compatibility
-- Modern browsers (Chrome 88+, Firefox 85+, Safari 14+, Edge 88+)
-- CSS Grid and Flexbox support required
-- JavaScript ES6+ features used
-- Intersection Observer API for animations
-- Modern clipboard API with fallback support
-
-## SEO & Accessibility
-- Semantic HTML5 structure throughout
-- Proper heading hierarchy and ARIA labels where needed
-- Alt text for images and descriptive link text
-- Keyboard navigation support with visible focus indicators
-- High contrast ratios and readable font sizes
-- Meta tags for social media sharing
-
-This portfolio represents a professional showcase designed to impress academic institutions, research organizations, and technology companies while maintaining excellent user experience and technical implementation standards.
-
-This file provides guidance to YOUWARE Agent (youware.com) when working with code in this repository.`;
-
-    // Create blob and download
-    const blob = new Blob([youwareContent], { type: 'text/markdown' });
-    const url = URL.createObjectURL(blob);
-    
-    // Create temporary download link
-    const downloadLink = document.createElement('a');
-    downloadLink.href = url;
-    downloadLink.download = 'YOUWARE.md';
-    downloadLink.style.display = 'none';
-    
-    // Add to DOM, click, and remove
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
-    
-    // Clean up the URL object
-    URL.revokeObjectURL(url);
-    
-    // Visual feedback
-    const btn = document.getElementById('downloadYouwareBtn');
-    if (btn) {
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '✅ Downloaded!';
-        btn.style.background = '#22c55e';
-        
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = '';
-        }, 2000);
-    }
-}
-
-// Service Worker registration for PWA capabilities (if needed)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        // Service worker registration can be added here for offline capabilities
-    });
-}
