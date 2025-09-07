@@ -84,20 +84,22 @@ function setupScrollEffects() {
 
 // Advanced Intersection Observer with staggered animations
 function setupIntersectionObserver() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+  const observerOptions = {
+  threshold: 0.01,             // %1 görününce tetikle
+  rootMargin: '0px 0px -20% 0px' // ekrana girmeden biraz önce başlat
+};
+
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 // Staggered animation delay
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    entry.target.classList.add('animated');
-                }, index * 100);
+                requestAnimationFrame(() => {
+    entry.target.style.opacity = '1';
+    entry.target.style.transform = 'translateY(0)';
+    entry.target.classList.add('animated');
+});
+
             }
         });
     }, observerOptions);
@@ -106,9 +108,11 @@ function setupIntersectionObserver() {
     const animatedElements = document.querySelectorAll('.card, .education-card, .about-text, .section-title');
     animatedElements.forEach((element, index) => {
         element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-        element.style.transitionDelay = `${index * 0.1}s`;
+element.style.transform = 'translateY(12px)'; // daha kısa mesafe = daha hızlı algı
+element.style.transition = 'opacity .35s ease-out, transform .35s ease-out';
+element.style.transitionDelay = '0s'; // en kritik kısım: kuyruk gecikmesini kaldır
+element.style.willChange = 'opacity, transform';
+
         observer.observe(element);
     });
 }
