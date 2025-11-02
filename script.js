@@ -853,6 +853,15 @@ const projectShowcaseData = {
       url: "music/bateri4.mov",
       caption: "My drum performance"
     },
+    {
+      url: "music/piano2.mp4",
+      caption: "My piano performance"
+    },
+    {
+      url: "music/piano3.mp4",
+      caption: "My piano performance"
+    },
+    
   ]
 }
 
