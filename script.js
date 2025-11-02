@@ -1,4 +1,4 @@
-// Enhanced Portfolio JavaScript - Modern Interactions and Animations
+
 
 document.addEventListener("DOMContentLoaded", function () {
     initializePortfolio();
@@ -17,7 +17,7 @@ function initializePortfolio() {
     setupDownloadButton();
 }
 
-// Enhanced Smooth Scrolling with offset for fixed header
+
 function setupSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -32,14 +32,14 @@ function setupSmoothScrolling() {
                     behavior: 'smooth'
                 });
                 
-                // Update active navigation state
+                
                 updateActiveNavigation(this.getAttribute('href'));
             }
         });
     });
 }
 
-// Enhanced Scroll Progress and Header Effects
+
 function setupScrollEffects() {
     let ticking = false;
     
@@ -57,12 +57,12 @@ function setupScrollEffects() {
         const scrollCurrent = window.scrollY;
         const scrollPercentage = Math.min((scrollCurrent / scrollTotal) * 100, 100);
         
-        // Update scroll progress bar with smooth animation
+        
         if (scrollProgress) {
             scrollProgress.style.width = scrollPercentage + '%';
         }
         
-        // Enhanced header background change
+        
         if (header) {
             if (window.scrollY > 100) {
                 header.style.background = 'rgba(0, 0, 0, 0.95)';
@@ -75,25 +75,25 @@ function setupScrollEffects() {
             }
         }
         
-        // Update active navigation based on scroll position
+        
         updateActiveNavigationOnScroll();
         
         ticking = false;
     }
 }
 
-// Advanced Intersection Observer with staggered animations
+
 function setupIntersectionObserver() {
   const observerOptions = {
-  threshold: 0.01,             // %1 görününce tetikle
-  rootMargin: '0px 0px -20% 0px' // ekrana girmeden biraz önce başlat
+  threshold: 0.01,             
+  rootMargin: '0px 0px -20% 0px' 
 };
 
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                // Staggered animation delay
+                
                 requestAnimationFrame(() => {
     entry.target.style.opacity = '1';
     entry.target.style.transform = 'translateY(0)';
@@ -104,20 +104,20 @@ function setupIntersectionObserver() {
         });
     }, observerOptions);
 
-    // Apply to various elements with initial hidden state
+    
     const animatedElements = document.querySelectorAll('.card, .education-card, .about-text, .section-title');
     animatedElements.forEach((element, index) => {
         element.style.opacity = '0';
-element.style.transform = 'translateY(12px)'; // daha kısa mesafe = daha hızlı algı
+element.style.transform = 'translateY(12px)'; 
 element.style.transition = 'opacity .35s ease-out, transform .35s ease-out';
-element.style.transitionDelay = '0s'; // en kritik kısım: kuyruk gecikmesini kaldır
+element.style.transitionDelay = '0s'; 
 element.style.willChange = 'opacity, transform';
 
         observer.observe(element);
     });
 }
 
-// Enhanced Parallax Effects
+
 function setupParallaxEffects() {
     window.addEventListener('scroll', function() {
         const scrolled = window.scrollY;
@@ -125,16 +125,16 @@ function setupParallaxEffects() {
         const heroContent = document.querySelector('.hero-content');
         
         if (hero && window.innerWidth > 768) {
-            // Subtle parallax for hero background
+            
             hero.style.transform = `translateY(${scrolled * 0.3}px)`;
             
-            // Counter-parallax for hero content
+            
             if (heroContent) {
                 heroContent.style.transform = `translateY(${scrolled * -0.15}px)`;
             }
         }
         
-        // Parallax for profile image
+        
         const profileImg = document.querySelector('.profile-img');
         if (profileImg && window.innerWidth > 768) {
             const rect = profileImg.getBoundingClientRect();
@@ -144,13 +144,13 @@ function setupParallaxEffects() {
     });
 }
 
-// Dynamic Header Effects
+
 function setupHeaderEffects() {
     const header = document.querySelector('header');
     const logo = document.querySelector('.logo');
     
     if (header && logo) {
-        // Add hover effect to logo
+       
         logo.addEventListener('mouseenter', function() {
             this.style.transform = 'scale(1.05)';
         });
@@ -161,24 +161,24 @@ function setupHeaderEffects() {
     }
 }
 
-// Enhanced Code Section with Better UX
+
 function setupCodeSection() {
-    // Load actual file contents into code sections
+    
     loadActualCodeContent();
     
-    // Ensure code tabs work properly
+    
     window.showCode = function(type) {
-        // Hide all code contents
+        
         document.querySelectorAll('.code-content').forEach(content => {
             content.classList.remove('active');
         });
         
-        // Remove active class from all tabs
+        
         document.querySelectorAll('.code-tab').forEach(tab => {
             tab.classList.remove('active');
         });
         
-        // Show selected content and activate tab
+        
         const targetContent = document.getElementById(type + '-content');
         const targetTab = event.target;
         
@@ -192,21 +192,21 @@ function setupCodeSection() {
 
     async function loadActualCodeContent() {
         try {
-            // Load HTML content
+            
             const htmlResponse = await fetch('index.html');
             if (htmlResponse.ok) {
                 const htmlContent = await htmlResponse.text();
                 document.getElementById('html-code').textContent = htmlContent;
             }
             
-            // Load CSS content
+            
             const cssResponse = await fetch('style.css');
             if (cssResponse.ok) {
                 const cssContent = await cssResponse.text();
                 document.getElementById('css-code').textContent = cssContent;
             }
             
-            // Load JavaScript content
+            
             const jsResponse = await fetch('script.js');
             if (jsResponse.ok) {
                 const jsContent = await jsResponse.text();
@@ -215,25 +215,25 @@ function setupCodeSection() {
             
         } catch (error) {
             console.log('Could not load some code files, showing fallback content');
-            // If fetching fails, show current page source
+            
             loadCodeFromCurrentPage();
         }
     }
 
     function loadCodeFromCurrentPage() {
-        // Get current page HTML - complete and exact
+        
         const htmlContent = document.documentElement.outerHTML;
         document.getElementById('html-code').textContent = htmlContent;
         
-        // Show message for CSS and JS that they should be fetched from files
+        
         document.getElementById('css-code').textContent = '/* Unable to fetch CSS file directly. The complete CSS code is in style.css */';
         document.getElementById('js-code').textContent = '// Unable to fetch JS file directly. The complete JavaScript code is in script.js';
     }
     
-    // Load the actual file contents first
+   
     loadActualCodeContent();
 
-    // Enhanced copy functionality with modern clipboard API
+    
     window.copyCode = function(elementId) {
         const codeElement = document.getElementById(elementId);
         const button = event.target;
@@ -242,7 +242,7 @@ function setupCodeSection() {
         
         const text = codeElement.textContent;
         
-        // Use modern clipboard API if available
+       
         if (navigator.clipboard && window.isSecureContext) {
             navigator.clipboard.writeText(text).then(() => {
                 showCopySuccess(button);
@@ -292,13 +292,13 @@ function setupCodeSection() {
     }
 }
 
-// Loading Animations for Hero Section
+
 function setupLoadingAnimations() {
     const heroTitle = document.querySelector('.hero h1');
     const heroSubtitle = document.querySelector('.hero .subtitle');
     const ctaButton = document.querySelector('.hero .cta-button');
     
-    // Staggered loading animations
+    
     if (heroTitle) {
         setTimeout(() => {
             heroTitle.style.opacity = '1';
@@ -321,10 +321,10 @@ function setupLoadingAnimations() {
     }
 }
 
-// Keyboard Navigation Support
+
 function setupKeyboardNavigation() {
     document.addEventListener('keydown', function(e) {
-        // Alt + number keys for quick section navigation
+        
         if (e.altKey && e.key >= '1' && e.key <= '8') {
             e.preventDefault();
             const sectionMap = {
@@ -344,16 +344,16 @@ function setupKeyboardNavigation() {
             }
         }
         
-        // ESC key to scroll to top
+        
         if (e.key === 'Escape') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
 }
 
-// Performance Optimizations
+
 function setupPerformanceOptimizations() {
-    // Lazy loading for images
+    
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -371,25 +371,25 @@ function setupPerformanceOptimizations() {
         });
     }
     
-    // Preload critical resources
+    
     const preloadLink = document.createElement('link');
     preloadLink.rel = 'preload';
     preloadLink.as = 'font';
     preloadLink.type = 'font/woff2';
     preloadLink.crossOrigin = 'anonymous';
     
-    // Optimize scroll performance
+   
     let resizeTimer;
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
-            // Recalculate layouts after resize
+            
             updateLayoutCalculations();
         }, 250);
     });
 }
 
-// Active Navigation Management
+
 function updateActiveNavigation(target) {
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.classList.remove('active');
@@ -420,19 +420,19 @@ function updateActiveNavigationOnScroll() {
     });
 }
 
-// Layout Calculations Update
+
 function updateLayoutCalculations() {
-    // Recalculate any dynamic measurements
+    
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
-        // Reset any cached measurements
+        
         card.style.height = 'auto';
     });
 }
 
-// Enhanced Card Interactions with Modal Support
+
 document.addEventListener('DOMContentLoaded', function() {
-    // sadece static-card olmayanlar
+    
     const cards = document.querySelectorAll('.card:not(.static-card)');
     
     cards.forEach((card, index) => {
@@ -472,16 +472,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Project Modal System - Display Only
+
 let currentProject = null;
 
-// Sample project data for demonstration
+
 const projectShowcaseData = {
-    // T-MBA Team Leadership
+   
     "0": {
         title: "T-MBA Team Leadership & Community Service",
         subtitle: "Leadership Project • 2023-2025",
-        description: "Leading school project team 'T-MBA' organizing multiple fundraising concerts and events. Successfully organized 2 concerts after earthquake to help college students, events for National Children's Day, Youth and Sports Day, and spring festival concert donating all proceeds to earthquake zone students in need.",
+        description: "Leading school project team 'T-MBA' organizing multiple fundraising concerts and events. Successfully organized 2 concerts and countless community events after earthquake to help college students, events for National Children's Day, Youth and Sports Day, and spring festival concert making around 4K USD and donating all proceeds to earthquake zone students in need.",
         skills: ["Team Leadership", "Event Organization", "Community Service", "Fundraising", "Concert Production", "Project Management"],
         achievements: [
             {
@@ -774,43 +774,89 @@ const projectShowcaseData = {
 },
 
 
-// Academic Excellence Awards (cardId: 6)
-"6": {
+
+"5": {
   title: "Academic Excellence Awards",
-  subtitle: "Awards • 2027–2025",
+  subtitle: "Awards • 2017–2025",
   description: "High Honor / Honor rolls, school-wide academic awards, and standardized test achievements.",
   
-  // İstersen skills/achievements de girersin; şart değil
+ 
   skills: ["Academic Excellence", "Consistency", "Discipline", "High Honor"],
   achievements: [
     { title: "High Honor Roll", description: "Multiple semesters with outstanding GPA." },
     
   ],
 
-  // ⬇⬇⬇ Videolar (0–4 mantığının aynısı; dizi halinde)
+  
   images: [
     {
-      url: "academics/honor_roll_2024.mp4",
-      caption: "High Honor Roll Ceremony 2024"
+      url: "award/takdir.HEIC",
+      caption: "Documents that I saved from earthquake."
+    },
+    
+  ]
+},
+
+
+
+
+6: {
+  title: "Musical Expertise",
+  subtitle: "Pianist & Multi-Instrumentalist • Since 5th Grade",
+  description: "Professional pianist with years of performance experience in concerts and community events. Also a self-taught musician proficient in drums, guitar, and ukulele. Uses music not only for artistic expression but also as a tool for fundraising and community service.",
+  skills: [
+    "Professional Piano",
+    "Drums",
+    "Guitar",
+    "Ukulele",
+    "Concert Performance",
+    "Music Production",
+    "Event Organization",
+    "Self-Taught Learning"
+  ],
+  achievements: [
+    {
+      title: "Concert Performances",
+      description: "Performed piano pieces in numerous school concerts and charity events, blending music with social impact."
     },
     {
-      url: "academics/awards_day_math.mp4",
-      caption: "Math Department Award"
-    },
-    {
-      url: "academics/ielts_result_screen.mp4",
-      caption: "IELTS Result Showcase"
-    },
-    {
-      url: "academics/sat_result_walkthrough.mp4",
-      caption: "SAT Score Breakdown"
-    },
-    {
-      url: "academics/school_awards_2025.mp4",
-      caption: "School Awards Day 2025"
+      title: "Community Engagement through Music",
+      description: "Organized and participated in concerts to support earthquake recovery efforts and raise funds for children in need."
     }
+  ],
+  images: [
+    {
+      url: "music/pianophoto.jpg",
+      caption: "Performing at a community event"
+    },
+    {
+      url: "music/piano2.jpg",
+      caption: "During the community event performance"
+    },
+    
+  ],
+  videos: [
+    {
+      url: "music/pianovideo.mov",
+      caption: "Live piano performance at a school event"
+    },
+    
+    {
+      url: "music/bateri2.mov",
+      caption: "My drum performance"
+    },
+    {
+      url: "music/bateri3.mov",
+      caption: "My drum performance"
+    },
+    {
+      url: "music/bateri4.mov",
+      caption: "My drum performance"
+    },
   ]
 }
+
+
 
 
 
@@ -826,7 +872,7 @@ function openProjectModal(card) {
     
     currentProject = cardId;
     
-    // Get project data or create default
+    
     const projectData = projectShowcaseData[cardId] || {
         title: title,
         subtitle: "Project • Timeline",
@@ -842,7 +888,7 @@ function openProjectModal(card) {
         videos: []
     };
     
-    // Populate modal with project showcase data
+   
     populateProjectDisplay(projectData);
     
     // Show modal with animation
@@ -909,7 +955,7 @@ function populateProjectDisplay(data) {
         imagesContainer.innerHTML = `
             <div class="gallery-placeholder">
                 <span>📸</span>
-                <p>Project images will be displayed here</p>
+                
             </div>
         `;
     }
@@ -933,7 +979,7 @@ function populateProjectDisplay(data) {
         videosContainer.innerHTML = `
             <div class="video-placeholder">
                 <span>🎥</span>
-                <p>Project videos and demos will be displayed here</p>
+               
             </div>
         `;
     }

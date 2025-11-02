@@ -1,4 +1,4 @@
-/* Modern Portfolio CSS - Enhanced Design System */
+
 
 :root {
     --primary-black: #000000;
@@ -35,7 +35,7 @@ body {
     padding: 0 24px;
 }
 
-/* Enhanced Header & Navigation */
+
 header {
     background: var(--primary-black);
     color: white;
@@ -102,7 +102,7 @@ nav {
     width: 100%;
 }
 
-/* Main Content */
+
 main {
     margin-top: 80px;
 }
@@ -218,7 +218,7 @@ section {
     line-height: 1.4;
 }
 
-/* Enhanced Button Styles */
+
 .cta-button {
     background: white;
     color: var(--primary-black);
@@ -258,7 +258,7 @@ section {
     box-shadow: 0 15px 40px rgba(255,255,255,0.3);
 }
 
-/* Enhanced About Section */
+
 .about {
     background: white;
     position: relative;
@@ -321,7 +321,7 @@ section {
     margin-bottom: 1.5rem;
 }
 
-/* Education Section Enhancement */
+
 .education {
     background: var(--light-gray);
 }
@@ -381,7 +381,7 @@ section {
     line-height: 1.6;
 }
 
-/* Enhanced Project Cards */
+
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -463,7 +463,7 @@ section {
     transform: scale(1.05);
 }
 
-/* Enhanced Code Section */
+
 .code {
     background: var(--light-gray);
     position: relative;
@@ -593,7 +593,7 @@ section {
     transform: scale(1.05);
 }
 
-/* Download Button Styles */
+
 .download-btn {
     background: var(--primary-black);
     color: white;
@@ -640,7 +640,7 @@ section {
     transform: translateY(-1px) scale(1.02);
 }
 
-/* Enhanced Scroll Progress Indicator */
+
 .scroll-indicator {
     position: fixed;
     top: 80px;
@@ -670,7 +670,7 @@ section {
     background: linear-gradient(90deg, transparent, white);
 }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
     .container {
         padding: 0 20px;
@@ -762,12 +762,12 @@ section {
     }
 }
 
-/* Smooth scrolling and modern effects */
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Custom selection colors */
+
 ::selection {
     background: var(--primary-black);
     color: white;
@@ -778,14 +778,14 @@ html {
     color: white;
 }
 
-/* Enhanced focus styles for accessibility */
+
 button:focus,
 a:focus {
     outline: 2px solid var(--primary-black);
     outline-offset: 2px;
 }
 
-/* Loading animation for images */
+
 img {
     transition: opacity 0.3s ease;
 }
@@ -794,19 +794,19 @@ img:not([src]) {
     opacity: 0;
 }
 
-/* Smooth transitions for all interactive elements */
+
 button, a, input, textarea {
     transition: var(--transition-smooth);
 }
 
-/* Additional visual enhancements */
+
 .section-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--border-light), transparent);
     margin: 4rem 0;
 }
 
-/* Footer enhancement */
+
 footer {
     background: var(--primary-black);
     color: white;
@@ -830,7 +830,7 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* Modal Styles for Project Details */
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -913,7 +913,7 @@ footer p {
     padding: 0;
 }
 
-/* Project Hero Section */
+
 .project-hero {
     background: linear-gradient(135deg, var(--primary-black) 0%, var(--accent-gray) 100%);
     color: white;
@@ -962,7 +962,7 @@ footer p {
     opacity: 0.9;
 }
 
-/* Project Content Sections */
+
 .project-content {
     padding: 3rem;
 }
@@ -980,7 +980,7 @@ footer p {
     padding-bottom: 1rem;
 }
 
-/* Project Gallery */
+
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1047,7 +1047,7 @@ footer p {
     background: white;
 }
 
-/* Project Videos */
+
 .project-videos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -1083,7 +1083,7 @@ footer p {
     background: white;
 }
 
-/* Project Skills */
+
 .project-skills {
     display: flex;
     flex-wrap: wrap;
@@ -1110,7 +1110,7 @@ footer p {
     transform: scale(1.05);
 }
 
-/* Project Achievements */
+
 .project-achievements {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1194,7 +1194,7 @@ footer p {
     box-shadow: 0 5px 20px var(--shadow-medium);
 }
 
-/* Enhanced Card Cursor */
+
 .card {
     cursor: pointer;
     position: relative;
@@ -1224,7 +1224,7 @@ footer p {
     opacity: 1;
 }
 
-/* Responsive Modal */
+
 @media (max-width: 768px) {
     .modal-content {
         width: 95%;
