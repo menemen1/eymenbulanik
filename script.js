@@ -778,7 +778,7 @@ const projectShowcaseData = {
 "5": {
   title: "Academic Excellence Awards",
   subtitle: "Awards • 2017–2025",
-  description: "High Honor / Honor rolls, school-wide academic awards, and standardized test achievements.",
+  description: "High Honor / Honor rolls, school-wide academic awards, and standardized test achievements.Earlier documents are lost in the earthquake.",
   
  
   skills: ["Academic Excellence", "Consistency", "Discipline", "High Honor"],
@@ -790,10 +790,29 @@ const projectShowcaseData = {
   
   images: [
     {
-      url: "award/takdir.HEIC",
-      caption: "Documents that I saved from earthquake."
+      url: "award/takdir101.HEIC",
+      caption: "High Honor Roll, 10th Grade 1st Semester"
     },
-    
+     {
+      url: "award/takdir111.HEIC",
+      caption: "High Honor Roll, 11th Grade 1st Semester"
+    },
+     {
+      url: "award/takdir112.HEIC",
+      caption: "High Honor Roll, 11th Grade 2nd Semester"
+    },
+     {
+      url: "award/onur101.HEIC",
+      caption: "Academic Honors, 10th Grade 1st Semester"
+    },
+    {
+      url: "award/onur112.HEIC",
+      caption: "Academic Honors, 11th Grade 2nd Semester"
+    },
+    {
+      url: "award/ustunb.HEIC",
+      caption: "Academic Exellence, 11th Grade 2nd Semester"
+    },
   ]
 },
 
