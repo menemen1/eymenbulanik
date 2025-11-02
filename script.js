@@ -842,15 +842,15 @@ const projectShowcaseData = {
     },
     
     {
-      url: "music/bateri2.mov",
+      url: "music/drum2.mov",
       caption: "My drum performance"
     },
     {
-      url: "music/bateri3.mov",
+      url: "music/drum3.mov",
       caption: "My drum performance"
     },
     {
-      url: "music/bateri4.mov",
+      url: "music/drum4.mov",
       caption: "My drum performance"
     },
     {
