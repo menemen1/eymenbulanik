@@ -882,7 +882,203 @@ const projectShowcaseData = {
     },
     
   ]
+},
+
+7: {
+  title: "Robotics & Engineering",
+  subtitle: "Team Leadership • International Competitions • Innovation",
+  description: "Extensive experience leading robotics teams in Robotex, Fibonacci, and FRC competitions. Skilled in robot programming, team management, and strategic planning for international contests. Focused on merging creativity with technology to build innovative robotic solutions.",
+  skills: [
+    "Robotics Programming",
+    "Team Leadership",
+    "Competition Strategy",
+    "FRC",
+    "STEM Education",
+    "Technical Innovation",
+    "Problem Solving",
+    "Project Management"
+  ],
+  achievements: [
+    {
+      title: "Fibonacci International Robotics Championship",
+      description: "Led the team to 2nd place worldwide in entrepreneurship category. Managed robot design, presentation, and technical development."
+    },
+    {
+      title: "Robotex Turkey Finals",
+      description: "Earned Jury’s Special Award for entrepreneurship. Oversaw team operations, strategy, and community engagement."
+    },
+    {
+      title: "FRC Team 10353 Leadership",
+      description: "Directed the public relations and outreach activities, organizing STEM education events and village school visits."
+    }
+  ],
+  images: [
+    {
+      url: "award/antalyajuri.png",
+      caption: "This the document that states our jury special award"
+    },
+    {
+      url: "award/mersin2.png",
+      caption: "This is the document that states Robotex Turkey Local Finals Second Place "
+    },
+    {
+      url: "robo/fiboodul2.HEIC",
+      caption: "This is the document that states our second place in international Fibonacci competition"
+    }
+  ]
+
+  
+  
+},
+
+8: {
+  title: "Languages & Communication",
+  subtitle: "Fluency • Public Speaking • Global Engagement",
+  description: "Fluent in English and native Turkish speaker with advanced communication and presentation skills. Proven ability to articulate ideas clearly through Model United Nations, debate championships, and public speaking at various events and conferences.",
+  skills: [
+    "English (C1)",
+    "Turkish (Native)",
+    "Public Speaking",
+    "Debate",
+    "Model United Nations",
+    "Cross-cultural Communication",
+    "Persuasive Writing",
+    "Leadership through Communication"
+  ],
+  achievements: [
+    {
+      title: "Debate Championships",
+      description: "Achieved first place in multiple school and regional debate competitions for persuasive argumentation and analytical reasoning."
+    },
+    {
+      title: "Model United Nations",
+      description: "Served as a delegate and later as a co-chair, receiving 'Outstanding Delegate' award for diplomatic communication and leadership."
+    },
+    {
+      title: "Public Speaking Events",
+      description: "Delivered speeches and moderated sessions at school conferences and special events, showcasing confidence and clarity."
+    }
+  ],
+  images: [
+    {
+      url: "mun/meoutstand.jpg",
+      caption: "Me while getting Certificate of Outstanding Delegate Award at DoğaMUN"
+    },
+    {
+      url: "award/munodul1.HEIC",
+      caption: "Certificate of Outstanding Delegate Award at DoğaMUN"
+    },
+    {
+      url: "award/ieltssonuc.png",
+      caption: "My IELTS result"
+    },
+    {
+      url: "award/satsonuc.png",
+      caption: "My SAT result"
+    }
+  ],
+
+
+
+},
+
+
+
+9: {
+  title: "Sports & Dance Achievements",
+  subtitle: "Volleyball • Chess • Waltz Performance",
+  description: "Licensed volleyball and chess player, and passionate dancer specialized in Waltz. Champion of Bahçeşehir Hatay Volleyball Competition, 1st place in Hatay Doga Chess Competition, and performer in multiple school waltz showcases combining rhythm, strategy, and teamwork.",
+  skills: [
+    "Volleyball Champion",
+    "Chess Champion",
+    "Licensed Player",
+    "Waltz Dancer",
+    "Performer",
+    "Teamwork",
+    "Discipline",
+    "Artistic Expression"
+  ],
+  achievements: [
+    {
+      title: "Volleyball Championship",
+      description: "Won first place in Bahçeşehir Hatay Volleyball Competition as a licensed player representing the school team."
+    },
+    {
+      title: "Chess Championship",
+      description: "Secured 1st place in Hatay Doğa Chess Competition, representing the school in official tournaments."
+    },
+    {
+      title: "Waltz Performances",
+      description: "Performed waltz choreography in multiple school and public events, combining artistic expression with athletic discipline."
+    }
+  ],
+  images: [
+    {
+      url: "award/lisanlar.png",
+      caption: "These are my licences from previous season.(My current ones haven't arrived yet)"
+    },
+    
+  ],
+  videos: [
+    {
+      url: "vals/2023vals.mp4",
+      caption: "My first Live waltz performance at school event in 2023(I am the first one from right)"
+    },
+     {
+      url: "vals/19mayisvals.mp4",
+      caption: "My second Live waltz performance at school event in 2024(I am the first one from left)"
+    },
+    {
+      url: "vals/2025vals.mp4",
+      caption: "My third Live waltz performance at school event in 2025(I am the right one in the front while we are greeting eachother.)"
+    }
+  ]
+},
+
+
+10: {
+  title: "Community Service Recognition",
+  subtitle: "Volunteering • Music • Social Impact",
+  description: "Received Certificate of Honor from LÖSEV for volunteering with children with cancer and Certificate of Honor from Doğa Hatay for voluntary piano performances at multiple events. Recognized for exceptional community service and dedication to social causes through music and leadership.",
+  skills: [
+    "Community Service",
+    "Volunteering",
+    "Social Responsibility",
+    "Music for Good",
+    "Leadership",
+    "Empathy",
+    "Public Engagement",
+    "Humanitarian Work"
+  ],
+  achievements: [
+    {
+      title: "LÖSEV Volunteering",
+      description: "Received Certificate of Honor from LÖSEV for dedicated volunteer work and musical performances for children with cancer."
+    },
+    {
+      title: "Doğa Hatay Recognition",
+      description: "Awarded Certificate of Honor for piano performances at school charity events and special-day celebrations."
+    },
+    {
+      title: "Social Impact Through Music",
+      description: "Used music as a bridge to connect with communities, organizing and performing in concerts to support charitable causes."
+    }
+  ],
+  images: [
+    {
+      url: "award/losevonur.HEIC",
+      caption: "Certificate of Honor from LÖSEV for volunteering"
+    },
+    
+  ],
+  
 }
+
+
+
+
+
+
 
 
 
@@ -935,15 +1131,15 @@ function closeProjectModal() {
 }
 
 function populateProjectDisplay(data) {
-    // Set main title and subtitle
+ 
     document.getElementById('modalTitle').textContent = data.title;
     document.getElementById('projectMainTitle').textContent = data.title;
     document.getElementById('projectSubtitle').textContent = data.subtitle;
     
-    // Set description
+ 
     document.getElementById('projectDescription').innerHTML = `<p>${data.description}</p>`;
     
-    // Populate skills
+    
     const skillsContainer = document.getElementById('projectSkills');
     skillsContainer.innerHTML = '';
     data.skills.forEach(skill => {
@@ -953,7 +1149,7 @@ function populateProjectDisplay(data) {
         skillsContainer.appendChild(skillTag);
     });
     
-    // Populate achievements
+    
     const achievementsContainer = document.getElementById('projectAchievements');
     achievementsContainer.innerHTML = '';
     data.achievements.forEach(achievement => {
@@ -966,7 +1162,7 @@ function populateProjectDisplay(data) {
         achievementsContainer.appendChild(achievementCard);
     });
     
-    // Populate images
+    
     const imagesContainer = document.getElementById('projectImages');
     if (data.images && data.images.length > 0) {
         imagesContainer.innerHTML = '';
