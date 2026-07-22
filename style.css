@@ -144,7 +144,7 @@ section {
 /* Enhanced Hero Section */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('frc/explain2.jpg') top/cover no-repeat;
+                url('frc/explain2.JPG') top/cover no-repeat;
     color: white;
     text-align: center;
     padding: 10rem 0 8rem;

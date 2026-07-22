@@ -495,11 +495,11 @@ const projectShowcaseData = {
         ],
         images: [
             {
-                url: "tmba/tmba2.jpg",
+                url: "tmba/tmba2.JPG",
                 caption: "My Team in 2023-2024 school year"
             },
             {
-               url: "tmba/tmba1.jpg",
+               url: "tmba/tmba1.JPG",
                 caption: "My Team in 2023-2024 school year"
             },
             {
@@ -507,7 +507,7 @@ const projectShowcaseData = {
                 caption: "On the duty at National Childern's Day"
             },
             {
-                url: "tmba/tmba3.jpg",
+                url: "tmba/tmba3.JPG",
                 caption: "My Team in 2024-2025 school year"
             },
             {
@@ -518,11 +518,11 @@ const projectShowcaseData = {
         videos: [
 
             {
-                url: "tmba/concert1.mp4",
+                url: "tmba/concert1.MP4",
                 caption: "Our third concert in 2025"
             },
 {
-                url: "tmba/concert2.mp4",
+                url: "tmba/concert2.MP4",
                 caption: "Our first concert in 2023"
             },
         ]
@@ -550,7 +550,7 @@ const projectShowcaseData = {
                 caption: "Me with the second place certificate:)"
             },
             {
-               url: "robo/fiboodul.jpg",
+               url: "robo/fiboodul.JPG",
                 caption: "My Team getting the second place award"
             },
             {
@@ -562,7 +562,7 @@ const projectShowcaseData = {
         videos: [
 
 {
-                url: "robo/fibosunum.mp4",
+                url: "robo/fibosunum.MP4",
                 caption: "Me and my team doing presentation to the judges"
             }
 
@@ -586,15 +586,15 @@ const projectShowcaseData = {
   images: [
 
             {
-                url: "robo/robo2.jpg",
+                url: "robo/robo2.JPG",
                 caption: "Me and my team ready for presentation to the judges"
             },
             {
-               url: "robo/roboodul.jpg",
+               url: "robo/roboodul.JPG",
                 caption: "My team getting the second place award in Robotex Turkey Regionals"
             },
             {
-                url: "robo/robo1.jpg",
+                url: "robo/robo1.JPG",
                 caption: "Me with the second place trophy:)"
             }
 
@@ -606,12 +606,12 @@ const projectShowcaseData = {
 
 
 {
-                url: "robo/robosunum.mp4",
+                url: "robo/robosunum.MP4",
                 caption: "Me and my team doing presentation to the judges"
             },
 
 {
-                url: "robo/robosunum2.mp4",
+                url: "robo/robosunum2.MP4",
                 caption: "Me and my team doing presentation to the judges"
             }
 
@@ -649,39 +649,39 @@ const projectShowcaseData = {
                 caption: "Us at the village school"
 },
 {
-    url: "frc/explain2.jpg",
+    url: "frc/explain2.JPG",
                 caption: "Me doing presentation to other competitors in stand"
 },
 {
-    url: "frc/frcmaskot.jpg",
+    url: "frc/frcmaskot.JPG",
                 caption: "Me with the other team's mascot:)"
 },
 {
-    url: "frc/frcteam.jpg",
+    url: "frc/frcteam.JPG",
                 caption: "Our FRC team"
 },
 {
-    url: "frc/koyokulutakim.jpg",
+    url: "frc/koyokulutakim.JPG",
                 caption: "Our team at the village school"
 },
 {
-    url: "frc/ourobot.jpg",
+    url: "frc/ourobot.JPG",
                 caption: "Our FRC robot"
 },
 {
-    url: "frc/ourstand.jpg",
+    url: "frc/ourstand.JPG",
                 caption: "Me and my teammates at the stand:)"
 },
 {
-    url: "frc/playinggames2.jpg",
+    url: "frc/playinggames2.JPG",
                 caption: "At the stand having fun with other teams:)"
 },
 {
-    url: "frc/qualificationmatch.jpg",
+    url: "frc/qualificationmatch.JPG",
                 caption: "Our qualification match result"
 },
 {
-    url: "frc/talkingother.jpg",
+    url: "frc/talkingother.JPG",
                 caption: "Me explaining the game to other teams"
 },
 
@@ -692,19 +692,19 @@ const projectShowcaseData = {
                 caption: "Our team supporting our teammates at the match"
 },
 {
-    url: "frc/birdilekhakki.mp4",
+    url: "frc/birdilekhakki.MP4",
                 caption: "Our make a wish project"
 },
 {
-    url: "frc/koyokulu.mp4",
+    url: "frc/koyokulu.MP4",
                 caption: "Me explaining the application to a student"
 },
 {
-    url: "frc/koyokulusunum.mp4",
+    url: "frc/koyokulusunum.MP4",
                 caption: "Me explaining FRC to the students at village school."
 },
 {
-    url: "frc/koyokulusunum2.mp4",
+    url: "frc/koyokulusunum2.MP4",
                 caption: "Me explaining the application to the students at village school."
 }]
 },
@@ -732,15 +732,15 @@ const projectShowcaseData = {
   ],
   images: [
     {
-    url: "mun/meoutstand.jpg",
+    url: "mun/meoutstand.JPG",
                 caption: "Me getting 'Outstanding Delegate' award"
 },
 {
-    url: "mun/measco.jpg",
+    url: "mun/measco.JPG",
                 caption: "Me as co-chair in the session"
 },
 {
-    url: "mun/ascochair.jpg",
+    url: "mun/ascochair.JPG",
                 caption: "My POV of being a co-chair"
 },
 {
@@ -755,11 +755,11 @@ const projectShowcaseData = {
   videos: [
 
     {
-    url: "mun/gsl.mp4",
+    url: "mun/gsl.MP4",
                 caption: "My opening speech as a delegate"
 },
 {
-    url: "mun/meinthebreak.mp4",
+    url: "mun/meinthebreak.MP4",
                 caption: "My POV in the break as a delegate"
 },
 {
@@ -845,11 +845,11 @@ const projectShowcaseData = {
   ],
   images: [
     {
-      url: "music/pianophoto.jpg",
+      url: "music/pianophoto.JPG",
       caption: "Performing at a community event"
     },
     {
-      url: "music/piano2.jpg",
+      url: "music/piano2.JPG",
       caption: "During the community event performance"
     },
     
@@ -873,11 +873,11 @@ const projectShowcaseData = {
       caption: "My drum performance"
     },
     {
-      url: "music/piano2.mp4",
+      url: "music/piano2.MP4",
       caption: "My piano performance"
     },
     {
-      url: "music/piano3.mp4",
+      url: "music/piano3.MP4",
       caption: "My piano performance"
     },
     
@@ -961,7 +961,7 @@ const projectShowcaseData = {
   ],
   images: [
     {
-      url: "mun/meoutstand.jpg",
+      url: "mun/meoutstand.JPG",
       caption: "Me while getting Certificate of Outstanding Delegate Award at DoğaMUN"
     },
     {
